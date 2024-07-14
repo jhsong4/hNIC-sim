@@ -42,7 +42,7 @@ class Cache:
     def random_fill(self):
         # fill randomly at first
         while True:
-            c = (random.sample(self.contents.table.keys(), 1))[0]
+            c = (random.sample([*self.contents.table.keys()], 1))[0]
             if c in self:
                 continue
             if self.imem.can_add(c.size):
